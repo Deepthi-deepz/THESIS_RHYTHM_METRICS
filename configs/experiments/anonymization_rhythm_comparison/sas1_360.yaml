@@ -1,0 +1,40 @@
+experiment_name: anonymization_rhythm_comparison
+dataset_name: sas1_360
+
+alignment_csvs:
+  - /home/varghese@alabsad.fau.de/Thesis/Rhythm_Metrics/data/phones_csv/aligned_SAS-1_360.csv
+
+output_dir: results/anonymization_comparison/sas1_360
+
+random_seed: 42
+n_trials_per_condition: 10000
+
+utterances_per_side: [1, 3, 5, 10, 20, 40, 60]
+min_adj_pairs: [1, 3, 5, 10, 20]
+
+phoneset:
+  use_phones39: true
+  vowels:
+    - AA
+    - AE
+    - AH
+    - AO
+    - AW
+    - AY
+    - EH
+    - ER
+    - EY
+    - IH
+    - IY
+    - OW
+    - OY
+    - UH
+    - UW
+
+tables:
+  - name: rhythm_bundle_all
+    mode: all
+  - name: rhythm_bundle_vowel
+    mode: vowel
+  - name: rhythm_bundle_consonant
+    mode: consonant
